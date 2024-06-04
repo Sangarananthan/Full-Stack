@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+/* LENGTH */
+/* Fixed */
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+}
+/* Relative Length */
+section {
+  width: 500px;
+  height: 500px;
+  background-color: red;
+}
+/* percentage works relative to thier parent element */
+.box2 {
+  width: 21%;
+  height: 100%;
+  background-color: teal;
+}
+
+/* Relative to the Parent Element: The em unit is relative to the font size of the nearest parent element. */
+/* Relative to the Root Element: The rem unit stands for "root em" and is always relative to the font size of the root element (<html>). */
+
+/* vh - veiw port */
+.box3 {
+  background-color: aqua;
+  width: 50vw;
+  height: 100vh;
+}
+
+/* TYPOGRAPHY */
+p {
+  font-size: 40px;
+  font-family: "Playfair Display", serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* LAYOUT */
+.box3 {
+  padding: 20px;
+  margin: 20px;
+  border: 20px solid green;
+}
+
+/* BACKGROUND */
+.box4 {
+  height: 500px;
+  width: 100vw;
+  background: violet;
+  background-color: brown;
+  background-image: url(https://wallpapercrafter.com/th8006/1702091-babes-black-brunette-fashion-irina-model-sexy.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* DISPLAY */
+span {
+  background: teal;
+}
+
+/* POSITION */
+.container {
+  background-color: rgb(173, 173, 173);
+  height: 50vh;
+  width: 70vw;
+}
+.d {
+  width: 10%;
+  height: 20%;
+}
+
+.one {
+  background-color: chartreuse;
+  position: relative;
+  left: 50%;
+}
+.two {
+  background-color: chocolate;
+  position: absolute;
+  right: 20px;
+  top: 200px;
+}
+.three {
+  background-color: cornflowerblue;
+  position: sticky;
+  top: 200px;
+}

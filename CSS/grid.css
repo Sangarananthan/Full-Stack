@@ -1,0 +1,19 @@
+.container {
+  background-color: gray;
+  padding: 20px;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 10px;
+}
+
+.s {
+  background-color: rgb(65, 65, 65);
+  padding: 20px;
+}
+
+header {
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
