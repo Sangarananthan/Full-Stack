@@ -12,7 +12,7 @@ setTimeout(() => {
   console.log("This Function Will Executed after 2 seconds");
 }, 2000);
 
-//CLEARINTERVAL
+//CLEAR INTERVAL
 const interval = setInterval(() => {
   console.log("This Function is Being Executed between the intervals");
 }, 2000);
@@ -26,11 +26,6 @@ const person = {
   name: "Dhanush",
   role: "actor",
   age: 40,
-  greet: () => {
-    console.log(
-      `${person.name}is one of the coolest ${person.role} at ${person.age}`
-    );
-  },
 };
 
 // Enhanced Literals
@@ -41,11 +36,21 @@ function user(name, role, age) {
     age,
   };
 }
+
+// Normal
+function user(name, role, age) {
+  return {
+    name: name,
+    role: role,
+    age: age,
+  };
+}
+
 const User1 = user("Dhanush", "Actor", 40);
 console.log(User1);
 
 // Spread Operator
-const arr1 = [1, 2, 3, 4];
+const arr1 = [1, 2, 3, 4, 5];
 const arr2 = [...arr1, 5];
 console.log(arr2);
 
@@ -73,6 +78,7 @@ console.log(name, age, place);
 // Terinary Operator
 const pass = 7;
 const Auth = pass === 8 ? "Crt" : "Wrng";
+// Output - Wrng
 
 // For in Loop - Index/Key
 // Array
@@ -143,7 +149,7 @@ console.log(newArray);
 // Find
 array = [1, 2, 3, 4, 5];
 
-// Using find to create a new array which Satisfies condition
+// Using find to element which Satisfies condition
 newArray = array.find((num) => num > 2);
 console.log(newArray);
 
@@ -173,7 +179,7 @@ const keyOne = "Hello";
 const keyTwo = {};
 const keyThree = function () {};
 
-map.set(keyOne, "Value of Key One", "cool");
+map.set(keyOne, "Value of Key One");
 map.set(keyTwo, "Value of Key Two");
 map.set(keyThree, "Value of Key Three");
 console.log(map);
@@ -183,3 +189,21 @@ const mySet = new Set();
 const arr = [1, 2, 3, 3, 4, 4, 5, 5, 5];
 arr.forEach((x) => mySet.add(x));
 console.log(mySet);
+// OUTPUT- [1,2,3,4,5]
+
+// Create a new Symbol
+const uniqueID = Symbol("id");
+
+person = {
+  name: "John",
+  age: 30,
+  [uniqueID]: 12345,
+};
+
+console.log(person.name); // Output: John
+console.log(person.age); // Output: 30
+console.log(person[uniqueID]); // Output: 12345
+
+// Symbols are unique
+const anotherID = Symbol("id");
+console.log(uniqueID === anotherID); // Output: false
