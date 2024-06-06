@@ -8,6 +8,7 @@ body {
 }
 
 #emoji {
+  user-select: none;
   font-size: 10rem;
   filter: grayscale(1);
   cursor: pointer;
