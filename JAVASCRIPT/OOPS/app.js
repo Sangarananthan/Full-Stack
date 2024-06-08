@@ -287,5 +287,40 @@ class Dog1 extends Animals {
 }
 const dog2 = new Dog1("Buddy");
 console.log(dog2.makeSound());
+console.clear();
 
 // POlymorphism
+class Bird {
+  constructor(name) {
+    this.name = name;
+  }
+  makeSound() {
+    return "Unknown Sound";
+  }
+}
+
+class Eagle extends Bird {
+  constructor(name) {
+    super(name);
+  }
+  makeSound() {
+    return "EIIIHAAAAA!!";
+  }
+}
+
+class Chicken extends Bird {
+  constructor(name) {
+    super(name);
+  }
+  makeSound() {
+    return "CoCorakoo!!!";
+  }
+}
+const genericBird = new Bird("GenericBird");
+console.log(genericAnimal.makeSound());
+
+const eagle = new Eagle("Eagle");
+console.log(eagle.makeSound());
+
+const kolii = new Chicken("Kolii");
+console.log(kolii.makeSound());
