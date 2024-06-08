@@ -158,3 +158,134 @@ const rockingStart = new Mega("Dhanush", "god", "irreplaceable actor");
 console.log(rockingStart.greet());
 console.clear();
 // Modifiers
+
+function MyClass(publicField, privateField, protectedField) {
+  // Public field
+  this.publicField = publicField;
+
+  // private field
+  const _privatefield = privateField;
+
+  // protectedfield
+  const _protectedfield = protectedField;
+
+  // public Method
+  this.publicMethod = function () {
+    return `Public Field ${publicField}`;
+  };
+
+  //   private method
+  function _privateMethod() {
+    return `Private field ${privateField}`;
+  }
+
+  //   Protected Field
+  function _protectedMethod() {
+    return `Protected Field ${protectedField}`;
+  }
+
+  this.accessProtected = function () {
+    return _protectedMethod();
+  };
+}
+
+const myObject = new MyClass("Public", "Private", "Protected");
+console.log(myObject);
+console.clear();
+
+// Encapsulation
+function Counter() {
+  let _count = 0;
+
+  this.increment = function () {
+    _count += 1;
+  };
+  this.decrement = function () {
+    _count -= 1;
+  };
+  this.getCount = function () {
+    return _count;
+  };
+}
+const count = new Counter();
+count.decrement();
+console.log(count.getCount());
+console.log(count._count);
+
+// Abstraction
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  // Abstract method to be implemented by subclasses
+  makeSound() {
+    throw new Error("Method (makeSound) must be implemented");
+  }
+}
+
+class Dog extends Animal {
+  constructor(name) {
+    super(name);
+  }
+  makeSound() {
+    return "Woof Woof";
+  }
+}
+
+class Cat extends Animal {
+  constructor(name) {
+    super(name);
+  }
+  makeSound() {
+    return "Meow";
+  }
+}
+
+const traffie = new Dog("Traffie");
+console.log(traffie.makeSound()); // Output: Woof Woof
+
+const ginger = new Cat("Ginger");
+console.log(ginger.makeSound()); // Output: Meow
+console.clear();
+//inheritance
+
+// ES5
+function Animals(name) {
+  this.name = name;
+}
+Animals.prototype.makeSound = function () {
+  return "Unknown Sound";
+};
+
+function Doggy(name) {
+  Animals.call(this, name);
+}
+
+Doggy.prototype = Object.create(Animal.prototype);
+
+Doggy.prototype.makeSound = function () {
+  return "Woow Woow";
+};
+
+const genericAnimal = new Animals("Generic animal");
+console.log(genericAnimal.makeSound());
+console.log(genericAnimal.name);
+
+const jimmy = new Doggy("Jimmy");
+console.log(jimmy);
+console.log(jimmy.makeSound());
+
+// ES6
+class Dog1 extends Animals {
+  constructor(name) {
+    super(name);
+  }
+  makeSound() {
+    return "Woff!!";
+  }
+}
+const dog2 = new Dog1("Buddy");
+console.log(dog2.makeSound());
+
+// POlymorphism
