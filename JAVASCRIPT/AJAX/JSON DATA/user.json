@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "phone": "555-1234",
+  "address": {
+    "street": "123 Main St",
+    "city": "Anytown",
+    "state": "Anystate",
+    "zip": "12345"
+  }
+}
