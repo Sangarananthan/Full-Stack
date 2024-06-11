@@ -311,9 +311,10 @@
 // };
 
 // PROP DRILLING
-
+import ComponentA from "./ComponentA";
 const App = () => {
-  return <div>App</div>;
+  const name = "Sangar";
+  return <ComponentA name={name} />;
 };
 
 export default App;

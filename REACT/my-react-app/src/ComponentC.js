@@ -1,5 +1,5 @@
-const ComponentC = () => {
-  return <div>ComponentC</div>;
+const ComponentC = ({ name }) => {
+  return <div>{name}</div>;
 };
 
 export default ComponentC;
