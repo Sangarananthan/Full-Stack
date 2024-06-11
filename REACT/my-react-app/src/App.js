@@ -311,10 +311,26 @@
 // };
 
 // PROP DRILLING
-import ComponentA from "./ComponentA";
+// CREATE CONTEXT
+
+import { createContext } from "react";
+import ComponentC from "./ComponentC";
+
+// creating instance of create context
+export const Data = createContext();
+export const Data1 = createContext();
 const App = () => {
   const name = "Sangar";
-  return <ComponentA name={name} />;
+  const age = 21;
+  return (
+    <>
+      <Data.Provider value={name}>
+        <Data1.Provider value={age}>
+          <ComponentC />
+        </Data1.Provider>
+      </Data.Provider>
+    </>
+  );
 };
 
 export default App;
