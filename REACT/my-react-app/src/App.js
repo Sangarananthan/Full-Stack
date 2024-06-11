@@ -107,7 +107,104 @@
 // };
 
 // CONDITIONAL RENDERING
-const ValidPassword = () => <h1>Valid Password Succesfull Login!...</h1>;
+// const ValidPassword = () => <h1>Valid Password Succesfull Login!...</h1>;
+// const InValidPassword = () => <h1>InValid Password...</h1>;
+// const Password = ({ isValid }) => {
+//   if (isValid) {
+//     return <ValidPassword></ValidPassword>;
+//   } else {
+//     return <InValidPassword></InValidPassword>;
+//   }
+// };
+// const App = () => {
+//   return <Password isValid={false}></Password>;
+// };
+
+// AND OPERATOR
+
+// const Cart = () => {
+//   const items = [
+//     "wired buds",
+//     "earphone",
+//     "smart phone ",
+//     "tablet",
+//     "laptop",
+//     "Mi Smart Watch",
+//   ];
+//   return (
+//     <>
+//       <h1>Cart 🛒</h1>
+//       {items.length > 0 ? (
+//         <>
+//           <h1>You have {items.length} items in Your cart</h1>
+//           <h2>Products 👇</h2>
+//           {items.map((item, index) => (
+//             <ul key={index}>
+//               <li>{item}</li>
+//             </ul>
+//           ))}
+//         </>
+//       ) : (
+//         <h1>Your Cart Is Empty</h1>
+//       )}
+//     </>
+//   );
+// };
+// const App = () => {
+//   return (
+//     <>
+//       <Cart></Cart>
+//     </>
+//   );
+// };
+
+// STYLES
+// import "./index.css";
+// const App = () => {
+// inline
+
+// const s = {
+//   color: "white",
+//   backgroundColor: "crimson",
+//   padding: "10px",
+// };
+// return (
+//   <>
+//     <h1
+//       style={{
+//         color: s.color,
+//         backgroundColor: s.backgroundColor,
+//         padding: s.padding,
+//       }}
+//     >
+//       Hello I'm REACT
+//     </h1>
+//   </>
+// );
+
+//   return (
+//     <>
+//       <h1>Hello I am REACT</h1>
+//     </>
+//   );
+// };
+
+// EVENT HANDLER
+// const Button = () => {
+//   const handleClick = (a, b) => {
+//     console.log(a + b);
+//   };
+//   return <button onClick={handleClick(2, 3)}>Click me</button>;
+// };
+// const App = () => {
+//   return (
+//     <>
+//       <Button />
+//     </>
+//   );
+// };
+
+// STATE
 
 const App = () => {
   return <div>App</div>;
