@@ -1,4 +1,4 @@
-//CLASS BASED BASED COMPONENT
+// CLASS BASED BASED COMPONENT
 
 // import { Component } from "react";
 // class App extends Component {
@@ -205,6 +205,112 @@
 // };
 
 // STATE
+
+// useState - Example 1
+// import { useState } from "react";
+// const Counter = () => {
+//   const [count, setCount] = useState(0);
+//   const increment = () => {
+//     setCount(count + 1);
+//   };
+//   const decrement = () => {
+//     setCount(count - 1);
+//   };
+//   return (
+//     <>
+//       <h1>{count}</h1>
+//       <button onClick={increment}>+</button>
+//       <button onClick={decrement}>-</button>
+//     </>
+//   );
+// };
+// const App = () => {
+//   return <Counter />;
+// };
+
+// Example 2
+
+// const App = () => {
+//   const [value, setvalue] = useState("");
+//   const [item, setitem] = useState([]);
+//   const addItem = () => {
+//     setitem([...item, value]);
+//     setvalue("");
+//   };
+//   const removeitem = () => {
+//     setitem(item.filter((item) => item !== value));
+//     setvalue("");
+//   };
+
+//   const clearlist = () => {
+//     alert("You wish to Clear Cart");
+//     setitem([]);
+//   };
+//   return (
+//     <>
+//       <label htmlFor="item"></label>
+//       <input
+//         id="item"
+//         value={value}
+//         onChange={(e) => setvalue(e.target.value)}
+//       ></input>
+//       <button onClick={addItem}>Add</button>
+//       <button onClick={removeitem}>remove</button>
+//       <button onClick={clearlist}>clear</button>
+//       {item.length ? (
+//         <h1>You have {item.length} items in your cart 🛒</h1>
+//       ) : (
+//         <h1>Your Cart is Empty 🛒</h1>
+//       )}
+//       {item.map((item, index) => (
+//         <ul key={index}>
+//           <li>{item}</li>
+//         </ul>
+//       ))}
+//     </>
+//   );
+// };
+
+// useEffect()
+
+// import { useEffect, useState } from "react";
+
+// Example- 1
+// const App = () => {
+//   const [value, setValue] = useState(0);
+//   useEffect(() => {
+//     console.log("hello");
+//     document.title = `${value}`;
+//   }, [value]);
+//   return (
+//     <>
+//       <h1>{value}</h1>
+//       <button onClick={() => setValue(value + 1)}>Click Me </button>
+//     </>
+//   );
+// };
+
+// Example -2
+// const App = () => {
+//   const [data, setData] = useState([]);
+//   useEffect(() => {
+//     async function getData() {
+//       const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+//       const data = await res.json();
+//       if (data && data.length) setData(data);
+//     }
+//     getData();
+//   }, []);
+//   return (
+//     <>
+//       {data.map((post) => (
+//         <h1>{post.title}</h1>
+//       ))}
+//     </>
+//   );
+// };
+
+// PROP DRILLING
 
 const App = () => {
   return <div>App</div>;
