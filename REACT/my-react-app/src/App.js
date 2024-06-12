@@ -312,25 +312,128 @@
 
 // PROP DRILLING
 // CREATE CONTEXT
-
-import { createContext } from "react";
-import ComponentC from "./ComponentC";
+// USE CONTEXT
+// import { createContext } from "react";
+// import ComponentC from "./ComponentC";
 
 // creating instance of create context
-export const Data = createContext();
-export const Data1 = createContext();
-const App = () => {
-  const name = "Sangar";
-  const age = 21;
-  return (
-    <>
-      <Data.Provider value={name}>
-        <Data1.Provider value={age}>
-          <ComponentC />
-        </Data1.Provider>
-      </Data.Provider>
-    </>
-  );
-};
+// export const Data = createContext();
+// export const Data1 = createContext();
+// const App = () => {
+//   const name = "Sangar";
+//   const age = 21;
+//   return (
+//     <>
+//       <Data.Provider value={name}>
+//         <Data1.Provider value={age}>
+//           <ComponentC />
+//         </Data1.Provider>
+//       </Data.Provider>
+//     </>
+//   );
+// };
+
+// USE REDUCER HOOK
+
+// Example !
+// import { useReducer } from "react";
+// const initialState = { count: 0 };
+// const reducer = (state, action) => {
+//   switch (action.type) {
+//     case "increment":
+//       return {
+//         ...state,
+//         count: state.count + 1,
+//       };
+//     case "decrement":
+//       return {
+//         ...state,
+//         count: state.count - 1,
+//       };
+//     case "reset":
+//       return {
+//         ...state,
+//         count: 0,
+//       };
+//     default:
+//       return state;
+//   }
+// };
+// const App = () => {
+//   const [state, dispatch] = useReducer(reducer, initialState);
+//   return (
+//     <>
+//       <h1>{state.count}</h1>
+//       <button onClick={() => dispatch({ type: "increment" })}>+</button>
+//       <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+//       <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+//     </>
+//   );
+// };
+
+// Example 2
+// import { useReducer } from "react";
+
+// const App = () => {
+//   // INITIAL STATE
+//   const initialState = {
+//     value: "",
+//     items: [],
+//   };
+
+//   // REDUCER FUNCTION
+//   const reducer = (state, action) => {
+//     switch (action.type) {
+//       case "INPUT":
+//         return {
+//           ...state,
+//           value: action.target.value,
+//         };
+//       case "ADD":
+//         return {
+//           ...state,
+//           items: [...state.items, state.value],
+//           value: "",
+//         };
+//       case "REMOVE":
+//         return {
+//           ...state,
+//           items: state.items.filter((item) => item !== state.value),
+//           value: "",
+//         };
+//       case "CLEAR":
+//         return {
+//           ...state,
+//           items: [],
+//           value: "",
+//         };
+//       default:
+//         throw new Error("Unknown action type");
+//     }
+//   };
+
+//   // useReducer
+//   const [state, dispatch] = useReducer(reducer, initialState);
+
+//   // BODY
+//   return (
+//     <>
+//       <label htmlFor="Item">SHOP</label>
+//       <input
+//         id="Item"
+//         value={state.value}
+//         onChange={(e) => dispatch({ type: "INPUT", target: e.target })}
+//       />
+//       <button onClick={() => dispatch({ type: "ADD" })}>ADD</button>
+//       <button onClick={() => dispatch({ type: "REMOVE" })}>REMOVE</button>
+//       <button onClick={() => dispatch({ type: "CLEAR" })}>CLEAR</button>
+//       <ul>
+//         {state.items.map((item, index) => (
+//           <li key={index}>{item}</li>
+//         ))}
+//       </ul>
+//     </>
+//   );
+// };
 
 export default App;
