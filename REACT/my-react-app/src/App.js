@@ -436,4 +436,64 @@
 //   );
 // };
 
+// USE REF
+// import { useRef } from "react";
+// const App = () => {
+//   const inputElement = useRef();
+//   const focusInput = () => {
+//     inputElement.current.focus();
+//     inputElement.current.value = "Sangar";
+//   };
+//   return (
+//     <>
+//       <input type="text" ref={inputElement} />
+//       <button onClick={() => focusInput()}>Click To Write Name</button>
+//     </>
+//   );
+// };
+
+// CUSTOM HOOK
+
+// WITHOUT HOOk
+// import { useState, useEffect } from "react";
+// const App = () => {
+//   const [data, setData] = useState(null);
+//   useEffect(() => {
+//     fetch("https://jsonplaceholder.typicode.com/todos")
+//       .then((res) => res.json())
+//       .then((data) => setData(data))
+//       .catch((error) => console.log(error));
+//   }, []);
+//   return (
+//     <>
+//       {data &&
+//         data.map((item, index) => {
+//           return (
+//             <p key={index}>
+//               {item.id}.{item.title}
+//             </p>
+//           );
+//         })}
+//     </>
+//   );
+// };
+
+// USING  CUSTOM HOOK
+import useFetch from "./useFetch";
+const App = () => {
+  const [data] = useFetch("https://jsonplaceholder.typicode.com/todos");
+  return (
+    <>
+      {data &&
+        data.map((item, index) => {
+          return (
+            <p key={index}>
+              {item.id}.{item.title}
+            </p>
+          );
+        })}
+    </>
+  );
+};
+
 export default App;
