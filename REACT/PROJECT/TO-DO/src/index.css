@@ -1,0 +1,123 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  user-select: none;
+}
+body {
+  background-image: url(../src/images/Curves\ Google\ Pixel\ 2\ Stock\ 4K2421616546.jpg);
+}
+::-webkit-scrollbar {
+  height: 2px;
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #bdbdbd; /* Color of the scrollbar handle */
+  border-radius: 2px; /* Rounded corners for the handle */
+}
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 6px; /* Rounded corners for the handle */
+  border: 3px solid transparent; /* Creating an illusion of smaller size */
+  background-clip: content-box; /* To ensure border doesn't affect the background color */
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.todo {
+  height: 500px;
+  width: 400px;
+  padding: 20px;
+  backdrop-filter: blur(50px);
+  border-radius: 2rem;
+  background-image: linear-gradient(
+    rgba(184, 184, 255, 0.173),
+    rgba(194, 161, 255, 0.168),
+    rgba(44, 44, 44, 0.145)
+  );
+  box-shadow: 5px 10px 50px 10px rgba(0, 0, 0, 0.125);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inputField {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inputField .task {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.137);
+  width: 80%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+  outline: none;
+  box-shadow: 5px 10px 50px 10px rgba(0, 0, 0, 0.125);
+  font-size: 20px;
+}
+.task::placeholder {
+  color: rgba(255, 255, 255, 0.318);
+}
+.inputField .tsk-btn {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.137);
+  border-radius: 10px;
+  border: none;
+  width: 15%;
+  box-shadow: 5px 10px 50px 10px rgba(0, 0, 0, 0.125);
+  transition: background-color 1s;
+}
+.inputField .tsk-btn:hover {
+  background-color: rgba(255, 255, 255, 0.434);
+  color: rgb(255, 255, 255);
+}
+
+.taskList {
+  height: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.list {
+  margin: 15px;
+  display: flex;
+  width: 95%;
+  height: 50px;
+  background-color: rgba(240, 248, 255, 0.044);
+  border-radius: 10px;
+  align-items: center;
+  font-family: sans-serif;
+  transition: background-color 1s cubic-bezier(0, 0.87, 0.1, 1);
+}
+.list:hover {
+  background-color: rgba(240, 248, 255, 0.281);
+  transform: scale(1.03);
+  width: 94%;
+}
+.taskList .radiobtn {
+  appearance: none; /* Remove default styling */
+  -webkit-appearance: none; /* Remove default styling for WebKit browsers */
+  -moz-appearance: none; /* Remove default styling for Mozilla browsers */
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin: 0px 10px;
+}
+
+.taskList .radiobtn:checked {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
