@@ -72,6 +72,7 @@ const ToDo = () => {
                   flexDirection: "column",
                   width: "100%",
                   alignItems: "center",
+                  opacity: "0.2",
                 }}
                 onClick={() => FocusInput()}
               >
