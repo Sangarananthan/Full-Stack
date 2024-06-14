@@ -1,5 +1,6 @@
+import Validate from "./Validate";
 const App = () => {
-  return <div>App</div>;
+  return <Validate />;
 };
 
 export default App;
