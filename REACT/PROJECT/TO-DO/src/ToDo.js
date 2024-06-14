@@ -58,7 +58,6 @@ const ToDo = () => {
             {tasks.length ? (
               tasks.map((task, id) => (
                 <div className="list" key={id}>
-                  <input type="radio" className="radiobtn" />
                   <p className="taskitem">{task}</p>
                   <div className="trash" onClick={() => removeTask(id)}>
                     <FaTrash />
