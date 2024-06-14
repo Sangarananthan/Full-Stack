@@ -50,8 +50,8 @@ const Testimonial = () => {
   return (
     <>
       <div className="testimonials">
-        <div className="testimonial-quote">{testimonials[index].quote}</div>
-        <div className="testimonial-author">{testimonials[index].author}</div>
+        <div className="testimonial-quote">"{testimonials[index].quote}"</div>
+        <div className="testimonial-author">- {testimonials[index].author}</div>
         <div className="nav">
           <button onClick={() => prev()}>Prev</button>
           <button onClick={() => next()}>Next</button>
