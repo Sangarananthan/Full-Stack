@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Outline&family=Kumar+One+Outline&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+.back {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  font-family: "Bungee Outline", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  flex-direction: column;
+  padding: 20px;
+}
+
+button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  border-radius: 10px;
+}
+
+.content h1 {
+  line-height: 1.2;
+}
