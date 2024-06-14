@@ -1,39 +1,33 @@
-import { useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import "./style.css";
 const Counter = () => {
-  // Initial State
-  const initialState = {
-    count: 0,
+  const [count, setCount] = useState(0);
+  const increment = () => {
+    setCount((prevCount) => prevCount + 1);
   };
 
-  //   Reducer Function
-  const reducer = (state, action) => {
-    switch (action.type) {
-      case "increment":
-        return {
-          count: state.count + 1,
-        };
-      case "decrement":
-        return {
-          count: state.count - 1,
-        };
-      default: {
-        throw new Error("invalid operation");
-      }
+  const decrement = () => {
+    setCount((prevCount) => prevCount - 1);
+  };
+
+  useEffect(() => {
+    const value = localStorage.getItem("count");
+    if (value !== null) {
+      setCount(Number(value));
     }
-  };
+  }, []);
 
-  //   Instance
-  const [state, dispatch] = useReducer(reducer, initialState);
-
+  useEffect(() => {
+    localStorage.setItem("count", count);
+  }, [count]);
   return (
     <>
       <div className="container">
-        <h1>{state.count}</h1>
+        <h1>{count}</h1>
       </div>
       <section className="btn-container">
-        <button onClick={() => dispatch({ type: "increment" })}>+</button>
-        <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+        <button onClick={increment}>+</button>
+        <button onClick={decrement}>-</button>
       </section>
     </>
   );

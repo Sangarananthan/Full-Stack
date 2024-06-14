@@ -1,8 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./index.css";
 const ToDo = () => {
   const [value, setValue] = useState("");
-  const [tasks, settasks] = useState(["HI There"]);
+  const [tasks, settasks] = useState(["Hey"]);
+  const addTask = () => {
+    if (value.trim()) {
+      settasks([...tasks, value.trim()]);
+      setValue("");
+    }
+  };
+
+  //   Load Tasks on Refresh
+  useEffect(() => {
+    const taskScheduled = localStorage.getItem("tasks");
+    if (taskScheduled) {
+      settasks(taskScheduled);
+    }
+  }, []);
+
   return (
     <>
       <div className="container">
@@ -14,7 +29,9 @@ const ToDo = () => {
               value={value}
               onChange={(e) => setValue(e.target.value)}
             ></input>
-            <button className="tsk-btn">Add</button>
+            <button className="tsk-btn" onClick={addTask}>
+              Add
+            </button>
           </div>
           <div className="taskList">
             {tasks.map((task) => (
